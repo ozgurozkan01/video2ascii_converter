@@ -1,0 +1,26 @@
+# ninja log v5
+2	272	7479748732858527	build.ninja	781954e5a933ae99
+6	1526	7480303018493575	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1526	1685	7480303019797845	video2ascii_converter.exe	15f1cccbb794c850
+11	1723	7480303857057369	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1724	1890	7480303858406496	video2ascii_converter.exe	15f1cccbb794c850
+19	1627	7480303987648881	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1628	1794	7480303988996372	video2ascii_converter.exe	15f1cccbb794c850
+17	1550	7480307400066896	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1557	1797	7480307402033418	video2ascii_converter.exe	15f1cccbb794c850
+18	1608	7480307458653246	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1609	1856	7480307460670975	video2ascii_converter.exe	15f1cccbb794c850
+5	1684	7480308211372332	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1685	1847	7480308212707299	video2ascii_converter.exe	15f1cccbb794c850
+21	1730	7480308688145392	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1731	1904	7480308689574111	video2ascii_converter.exe	15f1cccbb794c850
+5	1696	7480309493056699	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1696	1876	7480309494535309	video2ascii_converter.exe	15f1cccbb794c850
+6	1486	7480309824889953	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1487	1640	7480309826138689	video2ascii_converter.exe	15f1cccbb794c850
+4	1491	7480310058462340	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1491	1652	7480310059781906	video2ascii_converter.exe	15f1cccbb794c850
+15	1718	7480310583985561	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1719	1919	7480310585683909	video2ascii_converter.exe	15f1cccbb794c850
+6	1848	7480313746916167	CMakeFiles/video2ascii_converter.dir/main.cpp.obj	c34aab9637b3213f
+1849	2040	7480313748427219	video2ascii_converter.exe	15f1cccbb794c850

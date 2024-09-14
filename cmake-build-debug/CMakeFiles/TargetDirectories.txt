@@ -1,0 +1,3 @@
+C:/Users/ozgur/CLionProjects/video2ascii_converter/cmake-build-debug/CMakeFiles/video2ascii_converter.dir
+C:/Users/ozgur/CLionProjects/video2ascii_converter/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ozgur/CLionProjects/video2ascii_converter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
