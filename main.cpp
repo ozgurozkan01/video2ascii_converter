@@ -9,9 +9,9 @@ std::string get_suitable_ascii(int density)
     return std::string(1, ascii_buffer[density * (ascii_buffer.size() - 1) / 255]);
 }
 
-std::string to_ascii(const cv::Mat& gray_frame, const int& cell_size)
+void to_ascii(const cv::Mat& output_image, const cv::Mat& gray_frame, const int& cell_size)
 {
-    std::string output;
+    const int alignment_offset = 5;
 
     for (int y = 0; y < gray_frame.rows; y += cell_size)
     {
@@ -24,13 +24,15 @@ std::string to_ascii(const cv::Mat& gray_frame, const int& cell_size)
             // Other indexes such as 1, 2 does not work.
             // Zero index were used for gray value in general.
             int color_density = static_cast<int>(average_color[0]);
-            std::string pixelToAscii = get_suitable_ascii(color_density);
-            output += pixelToAscii;
+            cv::putText(output_image, // Output
+                        get_suitable_ascii(color_density), // written text
+                        cv::Point(x, y + cell_size - alignment_offset), // Where
+                        cv::FONT_HERSHEY_SIMPLEX, // Font type
+                        0.3, // Font Size
+                        cv::Scalar(255, 255, 255), // Font Color - White
+                        1); // Thickness
         }
-        output += "\n";
     }
-
-    return output;
 }
 
 int main() {
@@ -50,7 +52,6 @@ int main() {
     const int x_resolution = 1200;
     const int y_resolution = x_resolution / (aspect_ratio);
 
-    const int alignment_offset = 5;
     const int cell_size = 12;
     const int window_width = x_resolution / cell_size * cell_size; // cell_amount_x * cell_size
     const int window_height = y_resolution / cell_size * cell_size; // cell_amount_y * cell_size
@@ -69,32 +70,9 @@ int main() {
         cv::resize(original_frame, resized_frame, cv::Size(window_width, window_height));
         cv::cvtColor(resized_frame, resized_frame, cv::COLOR_BGR2GRAY);
 
-        std::string output_text = to_ascii(resized_frame, cell_size);
-
         cv::Mat output_image(window_height, window_width, CV_8UC3, cv::Scalar(0, 0, 0));
 
-        int y_offset = 0;
-        int x_offset = 0;
-
-        for (char c : output_text)
-        {
-            if (c != '\n')
-            {
-                cv::putText(output_image, // Output
-                            std::string(1, c), // written text
-                            cv::Point(x_offset, y_offset + cell_size - alignment_offset), // Where
-                            cv::FONT_HERSHEY_SIMPLEX, // Font type
-                            0.3, // Font Size
-                            cv::Scalar(255, 255, 255), // Font Color - White
-                            1); // Thickness
-
-                x_offset += cell_size;
-                continue;
-            }
-
-            y_offset += cell_size;
-            x_offset = 0;
-        }
+        to_ascii(output_image, resized_frame, cell_size);
 
         // Show output on screen.
         cv::imshow("video2ascii-converter", output_image);
